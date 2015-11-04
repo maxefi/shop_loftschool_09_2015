@@ -14,7 +14,49 @@ block content
 
                 .content
                   .sort
+                    .sort__left
+                      .sort__select--wrap
+                        .sort__title
+                          | Сортировать по
+                        .sort__select
+                          select.sort__select-elem
+                            - var options = ['по цене', 'по популярности', ]
+                            each option in options
+                              option(value="")= option
+                    .sort__right
+                      .sort__title
+                        | Вид каталога
+                      .sort__view
+                        ul.sort__view-list
+                          - var items = ['rows', 'grids', 'lines']
+                          each item in items
+                            li(class="sort__view-item sort__view_" + item data-view= item)
+                              a(href='#').sort__view-link
                   .products
+                    ul.products__list
+                      - for (var i = 0; i < 9; i++)
+                        li.products__item
+                          .products__item-inner
+                            .product__left
+                              .products__slideshow
+                                .products__slideshow-block
+                                  a(href="#").products__slideshow-display
+                                    img(src="http://lorempixel.com/200/200/technics/2" alt="")
+                                  ul.products__slideshow-thumbs
+                                    - for (var j = 0; j < 3; j++)
+                                      li.products__slideshow-item
+                                        a(href="").products__slideshow-link
+                                          img(src="http://lorempixel.com/45/45/technics/" + j alt="")
+                                .products__article
+                                  .products__article-word Артикул
+                                  .products__article-num 189238
+                              .products__desc
+                                .products__desc-title Samsung FT-I9301I GALAXY S J
+                                ul.products__desc-options
+                                  - var options = {'Тип SIM-карты' : "Micro-SIM", 'Количество SIM-карт' : "1", 'Цвет' : "Белый", 'ОС' : "Android", 'Связь 3G' : "Есть", '4G LTE' : "Нет", 'GPS-модуль' : "Есть"}
+                                  each value, key in options
+                                    li.products__option-item= key
+                                    li.products__option-value= value
             .attention
               .main-title
                 | Важная информация
