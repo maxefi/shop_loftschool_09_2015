@@ -2,14 +2,30 @@
 
 /* --------- normalize --------- */
 
-@import "_misc/normalize";
+@import "_misc/_normalize";
+
+/* --------- fonts --------- */
+
+@import "_misc/_fonts";
 
 /* --------- mixins --------- */
 
-@import "_misc/mixins";
+@import "_misc/_mixins";
 
 /* --------- adjustment --------- */
 
-@import "_misc/adjustment";
+@import "_misc/_adjustment";
 
+/* --------- misc icons sprite --------- */
 
+$misc-sprite: sprite-map('icons/_misc/*.png', $spacing: 70px);
+
+/* --------- common colors --------- */
+
+$black: #333333;
+$orange: #ff6600;
+$grey: #dee1e4;
+
+/* --------- sections --------- */
+
+@import "_sections/**/*";
