@@ -23,6 +23,8 @@ html
         .wrapper
             .maincontent
                 include _common/_header
+                include _common/_nav
+                include _common/_breadcrumbs
 
                 block content
 
@@ -31,7 +33,7 @@ html
         script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
         script.
             window.jQuery || document.write('<script src="/js/_vendors/jquery-1.11.3.min.js"><\/script>');
-            
+
         script(src='js/plugins.min.js')
         script(src='js/main.min.js')
 

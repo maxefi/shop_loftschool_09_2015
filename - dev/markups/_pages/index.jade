@@ -1,7 +1,15 @@
 extends ../main
 
 block title
-	| Главная страница (main.psd)
+  | Главная страница (main.psd)
 
 block content
-	article.content-wrapper
+    article.content-wrapper
+        .container
+            .main-title
+                | Мобильные телефоны
+            .main-content
+
+                include ../_common/_sidebar
+
+                .content
