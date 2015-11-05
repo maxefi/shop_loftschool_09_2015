@@ -14,6 +14,11 @@
   margin-right: 11px;
 }
 
+.sort__select-wrap {
+  line-height: 48px;
+  margin-left: 25px;
+}
+
 .sort__select {
   @include inlineblock(middle);
 }
@@ -39,7 +44,12 @@
 
 .sort__view-item {
   float: left;
-  border: 1px solid $grey;
+  border-left: 1px solid $grey;
+
+  // &:last-child {
+  //   border-top-right-radius: 5px;
+  //   border-bottom-right-radius: 5px;
+  // }
 }
 
 .sort__view-link {
