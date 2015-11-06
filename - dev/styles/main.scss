@@ -26,6 +26,14 @@ $black: #333333;
 $orange: #ff6600;
 $grey: #dee1e4;
 
+/* --------- plugins --------- */
+
+@import "_plugins/**/*";
+
+/* --------- widgets --------- */
+
+@import "_widgets/**/*";
+
 /* --------- sections --------- */
 
 @import "_sections/**/*";
