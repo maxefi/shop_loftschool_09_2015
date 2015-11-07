@@ -5,6 +5,8 @@ var
 	compass     = require('gulp-compass'),
 	jade        = require('gulp-jade'),
 	browserSync = require('browser-sync').create(),
+  gutil = require("gulp-util"),
+  ftp = require("vinyl-ftp"),
 	browserify  = require('gulp-browserify'),
 	uglify      = require('gulp-uglify'),
 	rename      = require("gulp-rename"),
@@ -107,6 +109,21 @@ gulp.task('watch', function(){
 	gulp.watch(paths.js.location, ['scripts']);
 	gulp.watch(paths.js.plugins, ['plugins']);
 	gulp.watch(paths.browserSync.watchPaths).on('change', browserSync.reload);
+});
+
+/* --------- deploy --------- */
+
+gulp.task("deploy", function() {
+    var conn = ftp.create({
+        host: "cooltech.chrge.ru",
+        user: "dist@maxefi.ru",
+        password: "relik5136051",
+        parallel: 10,
+        log: gutil.log
+    });
+
+    return gulp.src(["./dist/**/*"], { base: "./dist/", buffer: false})
+            .pipe(conn.dest("/public_html"));
 });
 
 /* --------- default --------- */

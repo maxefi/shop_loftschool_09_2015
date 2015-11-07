@@ -4,5 +4,17 @@
     line-height: 20px;
     color: $black;
     margin-bottom: 20px;
+    text-align: justify;
+    text-indent: 20px;
+  }
+
+  .first {
+    margin-right: 40px;
+    width: 530px !important;
+  }
+
+  .last {
+    float: right !important;
+    width: 530px !important;
   }
 }

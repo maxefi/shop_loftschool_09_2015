@@ -15,8 +15,8 @@
 }
 
 .sort__select-wrap {
-  line-height: 48px;
-  margin-left: 25px;
+  padding-top: 11px;
+  padding-left: 20px;
 }
 
 .sort__select {
@@ -45,11 +45,6 @@
 .sort__view-item {
   float: left;
   border-left: 1px solid $grey;
-
-  // &:last-child {
-  //   border-top-right-radius: 5px;
-  //   border-bottom-right-radius: 5px;
-  // }
 }
 
 .sort__view-link {
@@ -65,20 +60,26 @@ $items: rows, grids, lines;
 
 @each $item in $items {
   .sort__view_#{$item} {
-    .sort__view-link {
-      &:after {
-        content: '';
-        @include get-sprite($views-map, $item);
-        @include absolute-center;
-      }
+    .sort__view-icon {
+      @include get-sprite($views-map, $item);
+      @include absolute-center();
+    }
 
-      &:hover {
-        &:after {
-         content: '';
-          $item-hover: $item + '-hover';
-          @include get-sprite($views-map, $item-hover);
-          @include absolute-center;
-        }
+    &:hover {
+      $hover-icon: $item + '-hover';
+
+      .sort__view-icon {
+        @include get-sprite($views-map, $hover-icon);
+        @include absolute-center();
+      }
+    }
+
+    &.active {
+      $hover-icon: $item + '-hover';
+
+      .sort__view-icon {
+        @include get-sprite($views-map, $hover-icon);
+        @include absolute-center();
       }
     }
   }
